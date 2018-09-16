@@ -53,6 +53,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/seoul256.vim'
 " Plug 'jonathanfilip/lucius'
 " Plug 'scheakur/vim-scheakur'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
