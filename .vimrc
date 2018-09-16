@@ -38,3 +38,7 @@ catch
 endtry
 
 set background=dark
+
+set nobackup
+set nowb
+set noswapfile
