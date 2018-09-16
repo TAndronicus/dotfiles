@@ -51,8 +51,12 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/seoul256.vim'
+" Plug 'jonathanfilip/lucius'
+" Plug 'scheakur/vim-scheakur'
 
 call plug#end()
 
 colo seoul256
+" colo lucius
+" colorscheme scheakur
 
