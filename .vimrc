@@ -43,6 +43,19 @@ set nobackup
 set nowb
 set noswapfile
 
+let mapleader = ","
+
+noremap <leader>s :split<CR>
+noremap <leader>v :vsplit<CR>
+noremap <leader>j <C-w><C-j>
+noremap <leader>k <C-w><C-k>
+noremap <leader>h <C-w><C-h>
+noremap <leader>l <C-w><C-l>
+noremap <leader>q :q<CR>
+noremap <leader>w :wq<CR>
+
+noremap <leader>n :NERDTree<CR>
+
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -54,6 +67,7 @@ Plug 'junegunn/seoul256.vim'
 " Plug 'jonathanfilip/lucius'
 " Plug 'scheakur/vim-scheakur'
 Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
