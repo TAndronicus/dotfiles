@@ -1,0 +1,13 @@
+[user]
+	email = jed.biedrzycki@gmail.com
+	name = Jędrzej Biedrzycki
+[credential]
+	helper = store
+[push]
+	default = simple
+[color]
+    iu = true
+[color "status"]
+    changed = yellow bold
+    untracked = yellow
+    added = green bold
