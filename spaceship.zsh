@@ -15,6 +15,7 @@ NEWLINE='
 
 # Determination of Spaceship working directory
 # https://git.io/vdBH7
+export SPACESHIP_ROOT="/usr/lib/spaceship-prompt"
 if [[ -z "$SPACESHIP_ROOT" ]]; then
   if [[ "${(%):-%N}" == '(eval)' ]]; then
     if [[ "$0" == '-antigen-load' ]] && [[ -r "${PWD}/spaceship.zsh" ]]; then
@@ -45,15 +46,15 @@ if [ -z "$SPACESHIP_PROMPT_ORDER" ]; then
     dir           # Current directory section
     host          # Hostname section
     git           # Git section (git_branch + git_status)
-    hg            # Mercurial section (hg_branch  + hg_status)
+#    hg            # Mercurial section (hg_branch  + hg_status)
     package       # Package version
     node          # Node.js section
-    ruby          # Ruby section
-    elixir        # Elixir section
-    xcode         # Xcode section
-    swift         # Swift section
+#    ruby          # Ruby section
+#    elixir        # Elixir section
+#    xcode         # Xcode section
+#    swift         # Swift section
     golang        # Go section
-    php           # PHP section
+#    php           # PHP section
     rust          # Rust section
     haskell       # Haskell Stack section
     julia         # Julia section
@@ -62,8 +63,8 @@ if [ -z "$SPACESHIP_PROMPT_ORDER" ]; then
     venv          # virtualenv section
     conda         # conda virtualenv section
     pyenv         # Pyenv section
-    dotnet        # .NET section
-    ember         # Ember.js section
+#    dotnet        # .NET section
+#    ember         # Ember.js section
     kubecontext   # Kubectl context section
     exec_time     # Execution time
     line_sep      # Line break

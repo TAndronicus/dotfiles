@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 workspace="Workspace/dotfiles"
+absWorkspace="/home/jb/$workspace"
 
 declare -a FUNCTION
 FUNCTION+=("confPrezto")
@@ -10,6 +11,7 @@ FUNCTION+=("confTmux")
 FUNCTION+=("confIdea")
 FUNCTION+=("confOhMyZsh")
 FUNCTION+=("confFont")
+FUNCTION+=("confSpaceship")
 
 prefix="conf"
 
@@ -35,11 +37,31 @@ function confOhMyZsh {
     ln -s $workspace/.zshrc .zshrc
 }
 function confFont {
-    noto=99-noto-mono-color-emoji.conf
-    mkdir .config
-    mkdir .config/fontconfig
-    mkdir .config/fontconfig/conf.d
-    ln -s $workspace/$noto .config/fontconfig/conf.d/$noto
+    noto="99-noto-mono-color-emoji.conf"
+    configDir=".config"
+    if [ ! -d $configDir ]; then
+        mkdir $configDir
+    fi
+    fontDir="$configDir/fontconfig"
+    if [ ! -d $fontDir ]; then
+        mkdir $fontDir
+    fi
+    startupDir="$fontDir/conf.d"
+    if [ ! -d $startupDir ]; then
+        mkdir $startupDir
+    fi
+    cp -f ~/$workspace/$noto ~/$startupDir/$noto
+    fc-cache
+}
+function confSpaceship {
+    spaceship="/usr/lib/spaceship-prompt"
+    sudo rm $spaceship/spaceship.zsh
+    sudo rm $spaceship/sections/java.zsh
+    cd $spaceship
+    sudo ln -s $absWorkspace/spaceship.zsh spaceship.zsh
+    cd sections
+    sudo ln -s $absWorkspace/java.zsh java.zsh
+    cd
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
