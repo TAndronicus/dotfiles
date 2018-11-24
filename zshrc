@@ -19,3 +19,4 @@ export SDKMAN_DIR="/home/jb/.sdkman"
 export PATH="/home/jb/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+prompt spaceship
