@@ -9,6 +9,7 @@ FUNCTION+=("confGit")
 FUNCTION+=("confTmux")
 FUNCTION+=("confIdea")
 FUNCTION+=("confOhMyZsh")
+FUNCTION+=("confFont")
 
 prefix="conf"
 
@@ -32,6 +33,13 @@ function confIdea {
 function confOhMyZsh {
     rm .zshrc
     ln -s $workspace/.zshrc .zshrc
+}
+function confFont {
+    noto=99-noto-mono-color-emoji.conf
+    mkdir .config
+    mkdir .config/fontconfig
+    mkdir .config/fontconfig/conf.d
+    ln -s $workspace/$noto .config/fontconfig/conf.d/$noto
 }
 
 for ((i=0;i<${#FUNCTION[@]};i++))
