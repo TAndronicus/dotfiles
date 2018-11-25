@@ -18,14 +18,18 @@ FUNCTION+=("confKeys")
 prefix="conf"
 
 function confPrezto {
-    rm .zshrc
-    ls $workspace/prezto | xargs -I repl ln -s $workspace/repl .repl
+    if [ -f .zshrc ]; then
+        rm .zshrc
+    fi
+    ls $workspace/prezto | xargs -I repl ln -s $workspace/prezto/repl .repl
 }
 function confVim {
     ln -s $workspace/.vimrc .vimrc
 }
 function confGit {
-    rm .gitconfig
+    if [ -f .gitconfig]; then
+        rm .gitconfig
+    fi
     ln -s $workspace/.gitconfig .gitconfig
 }
 function confTmux {
@@ -35,7 +39,9 @@ function confIdea {
     ln -s $workspace/.ideavimrc .ideavimrc
 }
 function confOhMyZsh {
-    rm .zshrc
+    if [ -f .zshrc ]; then
+        rm .zshrc
+    fi
     ln -s $workspace/.zshrc .zshrc
 }
 function confFont {
@@ -56,8 +62,12 @@ function confFont {
 }
 function confSpaceship {
     spaceship="/usr/lib/spaceship-prompt"
-    sudo rm $spaceship/spaceship.zsh
-    sudo rm $spaceship/sections/java.zsh
+    if [ -f $spaceship/spaceship.zsh ]; then
+        sudo rm $spaceship/spaceship.zsh
+    fi
+    if [ -f $spaceship/sections/java.zsh ]; then
+        sudo rm $spaceship/sections/java.zsh
+    fi
     cd $spaceship
     sudo ln -s $absWorkspace/spaceship.zsh spaceship.zsh
     cd sections
