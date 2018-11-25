@@ -29,6 +29,6 @@ function start_tmux() {
         fi
     fi
 }
-# start_tmux
+start_tmux
 tmux a
 

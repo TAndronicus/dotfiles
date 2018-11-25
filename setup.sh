@@ -2,16 +2,18 @@
 
 workspace="Workspace/dotfiles"
 absWorkspace="/home/jb/$workspace"
+configDir=".config"
 
 declare -a FUNCTION
 FUNCTION+=("confPrezto")
+FUNCTION+=("confSpaceship")
 FUNCTION+=("confVim")
 FUNCTION+=("confGit")
 FUNCTION+=("confTmux")
 FUNCTION+=("confIdea")
 FUNCTION+=("confOhMyZsh")
 FUNCTION+=("confFont")
-FUNCTION+=("confSpaceship")
+FUNCTION+=("confKeys")
 
 prefix="conf"
 
@@ -38,7 +40,6 @@ function confOhMyZsh {
 }
 function confFont {
     noto="99-noto-mono-color-emoji.conf"
-    configDir=".config"
     if [ ! -d $configDir ]; then
         mkdir $configDir
     fi
@@ -61,6 +62,13 @@ function confSpaceship {
     sudo ln -s $absWorkspace/spaceship.zsh spaceship.zsh
     cd sections
     sudo ln -s $absWorkspace/java.zsh java.zsh
+    cd
+}
+function confKeys {
+    keysFile="kglobalshortcutsrc"
+    cd $configDir
+    sudo rm $keysFile
+    ln -s $absWorkspace/$keysFile $keysFile
     cd
 }
 
