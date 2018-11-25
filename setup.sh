@@ -19,7 +19,7 @@ prefix="conf"
 
 function confPrezto {
     rm .zshrc
-    ls $workspace | grep z | xargs -I repl ln -s $workspace/repl .repl
+    ls $workspace/prezto | xargs -I repl ln -s $workspace/repl .repl
 }
 function confVim {
     ln -s $workspace/.vimrc .vimrc
