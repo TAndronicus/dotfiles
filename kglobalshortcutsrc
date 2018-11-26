@@ -7,7 +7,7 @@ switch-to-activity-b19b76df-1e5a-42c5-8ca8-6e1d299ea0b7=none,none,Switch to acti
 Switch keyboard layout to Polish=none,none,Switch keyboard layout to Polish
 Switch keyboard layout to Russian=none,none,Switch keyboard layout to Russian
 Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Switch to Next Keyboard Layout
-_k_friendly_name=KDE Daemon
+_k_friendly_name=System Settings
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
@@ -27,10 +27,10 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 [khotkeys]
 _k_friendly_name=KDE Daemon
 {2bb3099a-0e4a-4829-bc02-f504883f714e}=,none,Take Full Screen Screenshot
-{8aaebd18-18f9-44ad-b487-39f57785890a}=,none,Start Screenshot Tool
+{8aaebd18-18f9-44ad-b487-39f57785890a}=Print,none,Start Screenshot Tool
 {abbfa38a-f390-4e02-8bee-51456841cdf3}=,none,Take Active Window Screenshot
 {c809995e-2afa-41ef-a851-c06ce7e473e0}=,none,Take Rectangular Region Screenshot
-{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
+{d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
 {f10bcad1-bf0b-4692-a23b-e1d32ce57d37}=Ctrl+Alt+T,none,Launch Konsole
 
 [kmix]
@@ -247,7 +247,7 @@ previous activity=Meta+Shift+Tab,none,Walk through activities (Reverse)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
 show dashboard=none,Ctrl+F12,Show Desktop
 show-barcode=none,none,Show Barcode...
-show-on-mouse-pos=none,none,Open Klipper at Mouse Position
+show-on-mouse-pos=Ctrl+Alt+V,none,Open Klipper at Mouse Position
 stop current activity=Meta+S,Meta+S,Stop Current Activity
 
 [yakuake]
