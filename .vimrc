@@ -1,3 +1,4 @@
+set mouse=a
 set number 
 
 set autoindent
