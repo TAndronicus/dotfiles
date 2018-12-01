@@ -8,6 +8,7 @@ declare -a FUNCTION
 FUNCTION+=("confPrezto")
 FUNCTION+=("confSpaceship")
 FUNCTION+=("confVim")
+FUNCTION+=("confNeovim")
 FUNCTION+=("confGit")
 FUNCTION+=("confTmux")
 FUNCTION+=("confIdea")
@@ -19,16 +20,25 @@ prefix="conf"
 
 function confPrezto {
     if [ -f .zshrc ]; then
-        rm .zshrc
+        sudo rm .zshrc
     fi
     ls $workspace/prezto | xargs -I repl ln -s $workspace/prezto/repl .repl
 }
 function confVim {
     ln -s $workspace/.vimrc .vimrc
 }
+function confNeovim {
+    cd $configDir/nvim
+    if [ -f init.vim ]; then
+        echo kurwa
+        sudo rm init.vim
+    fi
+    ln -s $absWorkspace/init.vim init.vim
+    cd
+}
 function confGit {
-    if [ -f .gitconfig]; then
-        rm .gitconfig
+    if [ -f .gitconfig ]; then
+        sudo rm .gitconfig
     fi
     ln -s $workspace/.gitconfig .gitconfig
 }
@@ -40,7 +50,7 @@ function confIdea {
 }
 function confOhMyZsh {
     if [ -f .zshrc ]; then
-        rm .zshrc
+        sudo rm .zshrc
     fi
     ln -s $workspace/.zshrc .zshrc
 }
