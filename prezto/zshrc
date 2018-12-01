@@ -31,6 +31,5 @@ function start_tmux() {
 }
 if [ ! "$YAKUAKE" = "true" ]; then
     start_tmux
-    tmux a
 fi
 
