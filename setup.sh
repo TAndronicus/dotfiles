@@ -22,10 +22,12 @@ function confPrezto {
     if [ -f .zshrc ]; then
         sudo rm .zshrc
     fi
-    ls $workspace/prezto | xargs -I repl ln -s $workspace/prezto/repl .repl
+    ls $absWorkspace/prezto | xargs -I repl ln -s $absWorkspace/prezto/repl .repl
 }
 function confVim {
-    ln -s $workspace/.vimrc .vimrc
+    ln -s $absWorkspace/.vimrc .vimrc
+    vim +'PlugInstall --sync' +qa
+    vim +'PlugUpdate --sync' +qa
 }
 function confNeovim {
     cd $configDir/nvim
@@ -34,25 +36,27 @@ function confNeovim {
         sudo rm init.vim
     fi
     ln -s $absWorkspace/init.vim init.vim
+    nvim +'PlugInstall --sync' +qa
+    nvim +'PlugUpdate --sync' +qa
     cd
 }
 function confGit {
     if [ -f .gitconfig ]; then
         sudo rm .gitconfig
     fi
-    ln -s $workspace/.gitconfig .gitconfig
+    ln -s $absWorkspace/.gitconfig .gitconfig
 }
 function confTmux {
-    ln -s $workspace/.tmux.conf .tmux.conf
+    ln -s $absWorkspace/.tmux.conf .tmux.conf
 }
 function confIdea {
-    ln -s $workspace/.ideavimrc .ideavimrc
+    ln -s $absWorkspace/.ideavimrc .ideavimrc
 }
 function confOhMyZsh {
     if [ -f .zshrc ]; then
         sudo rm .zshrc
     fi
-    ln -s $workspace/.zshrc .zshrc
+    ln -s $absWorkspace/.zshrc .zshrc
 }
 function confFont {
     noto="99-noto-mono-color-emoji.conf"
@@ -67,7 +71,7 @@ function confFont {
     if [ ! -d $startupDir ]; then
         mkdir $startupDir
     fi
-    cp -f ~/$workspace/$noto ~/$startupDir/$noto
+    cp -f ~/$absWorkspace/$noto ~/$startupDir/$noto
     fc-cache
 }
 function confSpaceship {
@@ -79,9 +83,9 @@ function confSpaceship {
         sudo rm $spaceship/sections/java.zsh
     fi
     cd $spaceship
-    sudo ln -s $absWorkspace/spaceship.zsh spaceship.zsh
+    ln -s $absWorkspace/spaceship.zsh spaceship.zsh
     cd sections
-    sudo ln -s $absWorkspace/java.zsh java.zsh
+    ln -s $absWorkspace/java.zsh java.zsh
     cd
 }
 function confKeys {
