@@ -8,7 +8,7 @@ switch-to-activity-f43b8be7-b65a-4771-baad-be959b392fd8=none,none,Switch to acti
 Switch keyboard layout to Polish=none,none,Switch keyboard layout to Polish
 Switch keyboard layout to Russian=none,none,Switch keyboard layout to Russian
 Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Switch to Next Keyboard Layout
-_k_friendly_name=KDE Daemon
+_k_friendly_name=System Settings Module
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
@@ -27,12 +27,12 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{46fe487b-ecf5-47ac-8ea0-e0306033b678}=,none,Start Screenshot Tool
-{476b6a47-dd28-48c6-9274-124d74611c34}=Ctrl+Alt+T,none,Launch Konsole
-{8b0ea9d2-fa8e-4a1c-9a9e-752d06186389}=Meta+Print,none,Take Active Window Screenshot
-{ce9ab605-0bdd-4f0f-afec-fc1e16a842bd}=Shift+Print,none,Take Full Screen Screenshot
+{238fb30c-8642-49a6-9506-b9aa58a00af9}=Meta+Print,none,Take Active Window Screenshot
+{7e69ccfa-89d8-41cf-b9d8-4a361dfaf2ba}=Shift+Print,none,Take Full Screen Screenshot
+{b4b05570-f737-4b5a-8ad4-775925136d9a}=Ctrl+Alt+T,none,Launch Konsole
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
-{dbfc8231-a880-47ef-a0de-af49dcb50233}=Meta+Shift+Print,none,Take Rectangular Region Screenshot
+{e1edc8a4-33eb-4bae-b991-81ee8cfe0a97}=Meta+Shift+Print,none,Take Rectangular Region Screenshot
+{ffa92416-51e7-40ef-8e57-8fb114021f31}=none,none,Start Screenshot Tool
 
 [kmix]
 _k_friendly_name=Audio Volume
