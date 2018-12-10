@@ -2,6 +2,7 @@
 _k_friendly_name=Activity Manager
 switch-to-activity-28473152-d760-4f61-9c81-70a5a1023c88=none,none,Switch to activity "Default"
 switch-to-activity-b19b76df-1e5a-42c5-8ca8-6e1d299ea0b7=none,none,Switch to activity "Default"
+switch-to-activity-f43b8be7-b65a-4771-baad-be959b392fd8=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to Polish=none,none,Switch keyboard layout to Polish
@@ -26,12 +27,12 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{2bb3099a-0e4a-4829-bc02-f504883f714e}=none,none,Take Full Screen Screenshot
-{8aaebd18-18f9-44ad-b487-39f57785890a}=Print,none,Start Screenshot Tool
-{abbfa38a-f390-4e02-8bee-51456841cdf3}=none,none,Take Active Window Screenshot
-{c809995e-2afa-41ef-a851-c06ce7e473e0}=none,none,Take Rectangular Region Screenshot
+{46fe487b-ecf5-47ac-8ea0-e0306033b678}=,none,Start Screenshot Tool
+{476b6a47-dd28-48c6-9274-124d74611c34}=Ctrl+Alt+T,none,Launch Konsole
+{8b0ea9d2-fa8e-4a1c-9a9e-752d06186389}=Meta+Print,none,Take Active Window Screenshot
+{ce9ab605-0bdd-4f0f-afec-fc1e16a842bd}=Shift+Print,none,Take Full Screen Screenshot
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
-{f10bcad1-bf0b-4692-a23b-e1d32ce57d37}=Ctrl+Alt+T,none,Launch Konsole
+{dbfc8231-a880-47ef-a0de-af49dcb50233}=Meta+Shift+Print,none,Take Rectangular Region Screenshot
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -252,4 +253,4 @@ stop current activity=Meta+S,Meta+S,Stop Current Activity
 
 [yakuake]
 _k_friendly_name=Yakuake
-toggle-window-state=F12,F12,Open/Retract Yakuake
+toggle-window-state=F10,F12,Open/Retract Yakuake

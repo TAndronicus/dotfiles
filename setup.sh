@@ -30,9 +30,12 @@ function confVim {
     vim +'PlugUpdate --sync' +qa
 }
 function confNeovim {
-    cd $configDir/nvim
+    nvimDir=$configDir/nvim
+    if [ ! -d $nvimDir ]; then
+	mkdir $nvimDir
+    fi
+    cd $nvimDir
     if [ -f init.vim ]; then
-        echo kurwa
         sudo rm init.vim
     fi
     ln -s $absWorkspace/init.vim init.vim
@@ -71,7 +74,7 @@ function confFont {
     if [ ! -d $startupDir ]; then
         mkdir $startupDir
     fi
-    cp -f ~/$absWorkspace/$noto ~/$startupDir/$noto
+    cp -f $absWorkspace/$noto ~/$startupDir/$noto
     fc-cache
 }
 function confSpaceship {
@@ -83,9 +86,9 @@ function confSpaceship {
         sudo rm $spaceship/sections/java.zsh
     fi
     cd $spaceship
-    ln -s $absWorkspace/spaceship.zsh spaceship.zsh
+    sudo ln -s $absWorkspace/spaceship.zsh spaceship.zsh
     cd sections
-    ln -s $absWorkspace/java.zsh java.zsh
+    sudo ln -s $absWorkspace/java.zsh java.zsh
     cd
 }
 function confKeys {
