@@ -33,4 +33,3 @@ if [[ ! "$YAKUAKE" = "true" && ! "$INTELLIJ" = "true" ]]; then
     start_tmux
 fi
 
-source /usr/share/nvm/init-nvm.sh

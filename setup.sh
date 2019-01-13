@@ -32,7 +32,7 @@ function confVim {
 function confNeovim {
     nvimDir=$configDir/nvim
     if [ ! -d $nvimDir ]; then
-	mkdir $nvimDir
+	    mkdir $nvimDir
     fi
     cd $nvimDir
     if [ -f init.vim ]; then
@@ -41,6 +41,13 @@ function confNeovim {
     ln -s $absWorkspace/init.vim init.vim
     nvim +'PlugInstall --sync' +qa
     nvim +'PlugUpdate --sync' +qa
+
+    usrNvimDir="/usr/share/nvm"
+    if [ ! -d $usrNvimDir ]; then
+        sudo mkdir $usrNvimDir
+    fi
+    cd $usrNvimDir
+    sudo ln -s $absWorkspace/init.vim init.vim
     cd
 }
 function confGit {
