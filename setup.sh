@@ -32,7 +32,7 @@ function confVim {
 function confNeovim {
     nvimDir=$configDir/nvim
     if [ ! -d $nvimDir ]; then
-	    mkdir $nvimDir
+	    sudo mkdir $nvimDir
     fi
     cd $nvimDir
     if [ -f init.vim ]; then
@@ -86,6 +86,9 @@ function confFont {
 }
 function confSpaceship {
     spaceship="/usr/lib/spaceship-prompt"
+    if [ ! -d $spaceship ]; then
+        mkdir $spaceship
+    fi
     if [ -f $spaceship/spaceship.zsh ]; then
         sudo rm $spaceship/spaceship.zsh
     fi
