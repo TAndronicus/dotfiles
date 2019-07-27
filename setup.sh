@@ -74,6 +74,10 @@ function confBashit {
         rm $HOME/.bash_profile
     fi
     ln -s $bashit_dir/.bash_profile $HOME/.bash_profile
+    bash-it enable plugin alias-completion battery docker-compose docker-machine docker fasd git java nvm pyenv sdkman tmux
+    bash-it enable alias git
+    bash-it enable completion bash-it docker docker-compose docker-machine git gradle maven npm nvm pip3 sdkman tmux
+    brainy show clock dir exitcode python scm
 }
 function confTmux {
     ln -s $absWorkspace/.tmux.conf .tmux.conf
