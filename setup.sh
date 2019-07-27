@@ -7,13 +7,14 @@ configDir=".config"
 declare -a FUNCTION
 FUNCTION+=("confPrezto")
 FUNCTION+=("confSpaceship")
+FUNCTION+=("confOhMyZsh")
+FUNCTION+=("confFont")
+FUNCTION+=("confBashit")
+FUNCTION+=("confTmux")
 FUNCTION+=("confVim")
 FUNCTION+=("confNeovim")
 FUNCTION+=("confGit")
-FUNCTION+=("confTmux")
 FUNCTION+=("confIdea")
-FUNCTION+=("confOhMyZsh")
-FUNCTION+=("confFont")
 FUNCTION+=("confKeys")
 
 prefix="conf"
@@ -23,6 +24,59 @@ function confPrezto {
         sudo rm .zshrc
     fi
     ls $absWorkspace/prezto | xargs -I repl ln -s $absWorkspace/prezto/repl .repl
+}
+function confSpaceship {
+    spaceship="/usr/lib/spaceship-prompt"
+    if [ ! -d $spaceship ]; then
+        mkdir $spaceship
+    fi
+    if [ -f $spaceship/spaceship.zsh ]; then
+        sudo rm $spaceship/spaceship.zsh
+    fi
+    if [ -f $spaceship/sections/java.zsh ]; then
+        sudo rm $spaceship/sections/java.zsh
+    fi
+    cd $spaceship
+    sudo ln -s $absWorkspace/spaceship.zsh spaceship.zsh
+    cd sections
+    sudo ln -s $absWorkspace/java.zsh java.zsh
+    cd
+}
+function confOhMyZsh {
+    if [ -f .zshrc ]; then
+        sudo rm .zshrc
+    fi
+    ln -s $absWorkspace/.zshrc .zshrc
+}
+function confFont {
+    noto="99-noto-mono-color-emoji.conf"
+    if [ ! -d $configDir ]; then
+        mkdir $configDir
+    fi
+    fontDir="$configDir/fontconfig"
+    if [ ! -d $fontDir ]; then
+        mkdir $fontDir
+    fi
+    startupDir="$fontDir/conf.d"
+    if [ ! -d $startupDir ]; then
+        mkdir $startupDir
+    fi
+    cp -f $absWorkspace/$noto ~/$startupDir/$noto
+    fc-cache
+}
+function confBashit {
+    bashit_dir=$absWorkspace/bash-it
+    if [ -f $HOME/.bashrc ]; then
+        rm $HOME/.bashrc
+    fi
+    ln -s $bashit_dir/.bashrc $HOME/.bashrc
+    if [ -f $HOME/.bash_profile ]; then
+        rm $HOME/.bash_profile
+    fi
+    ln -s $bashit_dir/.bash_profile $HOME/.bash_profile
+}
+function confTmux {
+    ln -s $absWorkspace/.tmux.conf .tmux.conf
 }
 function confVim {
     ln -s $absWorkspace/.vimrc .vimrc
@@ -56,50 +110,8 @@ function confGit {
     fi
     ln -s $absWorkspace/.gitconfig .gitconfig
 }
-function confTmux {
-    ln -s $absWorkspace/.tmux.conf .tmux.conf
-}
 function confIdea {
     ln -s $absWorkspace/.ideavimrc .ideavimrc
-}
-function confOhMyZsh {
-    if [ -f .zshrc ]; then
-        sudo rm .zshrc
-    fi
-    ln -s $absWorkspace/.zshrc .zshrc
-}
-function confFont {
-    noto="99-noto-mono-color-emoji.conf"
-    if [ ! -d $configDir ]; then
-        mkdir $configDir
-    fi
-    fontDir="$configDir/fontconfig"
-    if [ ! -d $fontDir ]; then
-        mkdir $fontDir
-    fi
-    startupDir="$fontDir/conf.d"
-    if [ ! -d $startupDir ]; then
-        mkdir $startupDir
-    fi
-    cp -f $absWorkspace/$noto ~/$startupDir/$noto
-    fc-cache
-}
-function confSpaceship {
-    spaceship="/usr/lib/spaceship-prompt"
-    if [ ! -d $spaceship ]; then
-        mkdir $spaceship
-    fi
-    if [ -f $spaceship/spaceship.zsh ]; then
-        sudo rm $spaceship/spaceship.zsh
-    fi
-    if [ -f $spaceship/sections/java.zsh ]; then
-        sudo rm $spaceship/sections/java.zsh
-    fi
-    cd $spaceship
-    sudo ln -s $absWorkspace/spaceship.zsh spaceship.zsh
-    cd sections
-    sudo ln -s $absWorkspace/java.zsh java.zsh
-    cd
 }
 function confKeys {
     keysFile="kglobalshortcutsrc"
