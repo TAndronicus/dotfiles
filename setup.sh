@@ -13,6 +13,7 @@ FUNCTION+=("confBashit")
 FUNCTION+=("confTmux")
 FUNCTION+=("confVim")
 FUNCTION+=("confNeovim")
+FUNCTION+=("confSpacemacs")
 FUNCTION+=("confGit")
 FUNCTION+=("confIdea")
 FUNCTION+=("confKeys")
@@ -107,6 +108,12 @@ function confNeovim {
     cd $usrNvimDir
     sudo ln -s $absWorkspace/init.vim init.vim
     cd
+}
+function confSpacemacs {
+    if [ -f ~/.spacemacs ]; then
+        sudo rm ~/.spacemacs
+    fi
+    ln -s $absWorkspace/.spacemacs .spacemacs
 }
 function confGit {
     if [ -f .gitconfig ]; then
