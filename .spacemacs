@@ -297,6 +297,7 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    golden-ratio-mode 1
+   ensime-startup-notification nil
    ))
 
 (defun dotspacemacs/user-init ()
