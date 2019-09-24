@@ -14,3 +14,4 @@ imap <S-Right> <Esc>v<Right>
 vnoremap <BS> d
 set clipboard+=unnamed
 set multiple-cursors
+
