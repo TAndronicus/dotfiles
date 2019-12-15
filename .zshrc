@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/jb/.oh-my-zsh"
+export ZSH="/home/jb/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -100,6 +100,8 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vpnpwr="sudo openconnect -u jedrzej.biedrzycki --authgroup=01--pracownicy --passwd-on-stdin --servercert pin-sha256:TSuZ31htGL//TDZkm99hnHnI22Nr0i26aVpg7azDzt4= vpn.pwr.wroc.pl"
+alias pwrvpn=vpnpwr
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/jb/.sdkman"
