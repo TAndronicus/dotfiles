@@ -27,12 +27,8 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{238fb30c-8642-49a6-9506-b9aa58a00af9}=Meta+Print,none,Take Active Window Screenshot
-{7e69ccfa-89d8-41cf-b9d8-4a361dfaf2ba}=Shift+Print,none,Take Full Screen Screenshot
-{b4b05570-f737-4b5a-8ad4-775925136d9a}=none,none,Launch Konsole
+{476b6a47-dd28-48c6-9274-124d74611c34}=Ctrl+Alt+T,none,Launch Konsole
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
-{e1edc8a4-33eb-4bae-b991-81ee8cfe0a97}=none,none,Take Rectangular Region Screenshot
-{ffa92416-51e7-40ef-8e57-8fb114021f31}=none,none,Start Screenshot Tool
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -212,6 +208,18 @@ nextmedia=Media Next,Media Next,Media playback next
 playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
+
+[org.kde.dolphin.desktop]
+_k_friendly_name=Dolphin
+_launch=Meta+E,Meta+E,Dolphin
+
+[org.kde.spectacle.desktop]
+ActiveWindowScreenShot=none,Meta+Print,Capture Active Window
+CurrentMonitorScreenShot=,none,Capture Current Monitor
+FullScreenScreenShot=none,Shift+Print,Capture Entire Desktop
+RectangularRegionScreenShot=Meta+Shift+Print,Meta+Shift+Print,Capture Rectangular Region
+_k_friendly_name=Spectacle
+_launch=none,Print,Launch Spectacle
 
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
