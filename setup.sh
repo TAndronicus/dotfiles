@@ -17,6 +17,7 @@ FUNCTION+=("confSpacemacs")
 FUNCTION+=("confGit")
 FUNCTION+=("confIdea")
 FUNCTION+=("confKeys")
+FUNCTION+=("confRedshift")
 
 prefix="conf"
 
@@ -129,6 +130,11 @@ function confKeys {
     cd $configDir
     sudo rm $keysFile
     ln -s $absWorkspace/$keysFile $keysFile
+    cd
+}
+function confRedshift {
+    cd ~/.config
+    ln -s $absWorkspace/redshift.conf redshift.conf
     cd
 }
 
