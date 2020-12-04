@@ -131,7 +131,7 @@ if [[ ! "$YAKUAKE" = "true" && ! "$INTELLIJ" = "true"  ]]; then
 fi
 
 autoload -U promptinit; promptinit
-prompt spaceship
+# prompt spaceship
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

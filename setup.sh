@@ -28,20 +28,23 @@ function confPrezto {
     ls $absWorkspace/prezto | xargs -I repl ln -s $absWorkspace/prezto/repl .repl
 }
 function confSpaceship {
-    spaceship="/usr/lib/spaceship-prompt"
-    if [ ! -d $spaceship ]; then
-        mkdir $spaceship
-    fi
-    if [ -f $spaceship/spaceship.zsh ]; then
-        sudo rm $spaceship/spaceship.zsh
-    fi
-    if [ -f $spaceship/sections/java.zsh ]; then
-        sudo rm $spaceship/sections/java.zsh
-    fi
+    themes="$HOME/.oh-my-zsh/custom/themes"
+    spaceship="$themes/spaceship-prompt"
     cd $spaceship
-    sudo ln -s $absWorkspace/spaceship.zsh spaceship.zsh
+    if [ -f spaceship.zsh ]; then
+        sudo rm spaceship.zsh
+    fi
+    sudo cp $absWorkspace/spaceship.zsh spaceship.zsh
     cd sections
+    if [ -f java.zsh ]; then
+        sudo rm java.zsh
+    fi
     sudo ln -s $absWorkspace/java.zsh java.zsh
+    cd $themes
+    if [ -f spaceship.zsh-theme ]; then
+        sudo rm spaceship.zsh-theme
+    fi
+    ln -s "$spaceship/spaceship.zsh-theme" "$themes/spaceship.zsh-theme"
     cd
 }
 function confOhMyZsh {

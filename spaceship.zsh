@@ -7,7 +7,7 @@
 
 # Current version of Spaceship
 # Useful for issue reporting
-export SPACESHIP_VERSION='3.6.0'
+export SPACESHIP_VERSION='3.11.2'
 
 # Common-used variable for new line separator
 NEWLINE='
@@ -15,7 +15,6 @@ NEWLINE='
 
 # Determination of Spaceship working directory
 # https://git.io/vdBH7
-export SPACESHIP_ROOT="/usr/lib/spaceship-prompt"
 if [[ -z "$SPACESHIP_ROOT" ]]; then
   if [[ "${(%):-%N}" == '(eval)' ]]; then
     if [[ "$0" == '-antigen-load' ]] && [[ -r "${PWD}/spaceship.zsh" ]]; then
@@ -50,6 +49,7 @@ if [ -z "$SPACESHIP_PROMPT_ORDER" ]; then
     package       # Package version
     node          # Node.js section
 #    ruby          # Ruby section
+#    elm           # Elm section
 #    elixir        # Elixir section
 #    xcode         # Xcode section
 #    swift         # Swift section
@@ -60,12 +60,14 @@ if [ -z "$SPACESHIP_PROMPT_ORDER" ]; then
     julia         # Julia section
     docker        # Docker section
     aws           # Amazon Web Services section
+    gcloud        # Google Cloud Platform section
     venv          # virtualenv section
     conda         # conda virtualenv section
     pyenv         # Pyenv section
 #    dotnet        # .NET section
 #    ember         # Ember.js section
-    kubecontext   # Kubectl context section
+    kubectl       # Kubectl context section
+#    terraform     # Terraform workspace section
     exec_time     # Execution time
     line_sep      # Line break
     battery       # Battery level and status
@@ -73,7 +75,7 @@ if [ -z "$SPACESHIP_PROMPT_ORDER" ]; then
     jobs          # Background jobs indicator
     exit_code     # Exit code section
     char          # Prompt character
-    java          # Java section
+    java
   )
 fi
 
@@ -167,7 +169,8 @@ spaceship_ps2() {
   # Retrieve exit code of last command to use in exit_code
   RETVAL=$?
 
-  spaceship::section "$SPACESHIP_CHAR_COLOR_SECONDARY" $SPACESHIP_CHAR_SYMBOL
+  local char="${SPACESHIP_CHAR_SYMBOL_SECONDARY="$SPACESHIP_CHAR_SYMBOL"}"
+  spaceship::section "$SPACESHIP_CHAR_COLOR_SECONDARY" "$char"
 }
 
 # ------------------------------------------------------------------------------
