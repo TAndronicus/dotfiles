@@ -137,6 +137,9 @@ function confKeys {
 }
 function confRedshift {
     cd ~/.config
+    if [ -f redshift.conf ]; then
+        sudo rm redshift.conf
+    fi
     ln -s $absWorkspace/redshift.conf redshift.conf
     cd
 }
