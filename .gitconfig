@@ -11,3 +11,5 @@
     changed = yellow bold
     untracked = yellow
     added = green bold
+[core]
+	autocrlf = input
