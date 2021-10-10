@@ -100,10 +100,15 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vpnpwr="sudo openconnect -u jedrzej.biedrzycki --authgroup=01--pracownicy --passwd-on-stdin --servercert pin-sha256:TSuZ31htGL//TDZkm99hnHnI22Nr0i26aVpg7azDzt4= vpn.pwr.wroc.pl"
-alias pwrvpn=vpnpwr
+
+sleepT() {
+    sudo rtcwake -m freeze -t "$(date +%s -d $1)"
+}
+
 alias connect-cern="bash ~/connect-cern.sh"
 alias cern-connect=connect-cern
+alias sleep23="sleepT '23:00'"
+alias sleep4="sleepT '4:15'"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/jb/.sdkman"
