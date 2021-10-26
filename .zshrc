@@ -101,14 +101,19 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-sleepT() {
+sleepUntilToday() {
     sudo rtcwake -m freeze -t "$(date +%s -d $1)"
+}
+
+sleepUntilTomorrow() {
+    sudo rtcwake -m freeze -t "$(expr $(date +%s -d $1) + 86400)"
 }
 
 alias connect-cern="bash ~/connect-cern.sh"
 alias cern-connect=connect-cern
-alias sleep23="sleepT '23:00'"
-alias sleep4="sleepT '4:15'"
+alias sleep1="sleepUntilTomorrow '1:30'"
+alias sleep7="sleepUntilToday '7:10'"
+alias largest="du -hsx -- * | sort -rh | head -25"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/jb/.sdkman"
