@@ -114,6 +114,7 @@ alias cern-connect=connect-cern
 alias sleep1="sleepUntilTomorrow '1:30'"
 alias sleep7="sleepUntilToday '7:10'"
 alias largest="du -hsx -- * | sort -rh | head -25"
+alias crypto-report="python /home/jb/Workspace/Python/finance/src/crypto_report.py"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/jb/.sdkman"
