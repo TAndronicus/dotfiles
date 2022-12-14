@@ -13,3 +13,5 @@
     added = green bold
 [core]
 	autocrlf = input
+[http]
+	postBuffer = 157286400
