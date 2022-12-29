@@ -1,7 +1,7 @@
 # Shows Java version.
 # | Variable | Default | Meaning |
 # | :------- | :-----: | ------- |
-# | `SPACESHIP_JAVA_SHOW` | `true` | Show current Java version or not |
+# | `SPACESHIP_JAVA_SHOW` | `true` | Show current Java version |
 # | `SPACESHIP_JAVA_PREFIX` | `on ` | Prefix before the Java section |
 # | `SPACESHIP_JAVA_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after the Java section |
 # | `SPACESHIP_JAVA_SYMBOL` | `☕☕☕☕☕` | Character to be shown before Java version |

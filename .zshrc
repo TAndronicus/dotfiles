@@ -68,6 +68,7 @@ plugins=(
   docker
   gradle
   mvn
+  sbt
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -1,23 +1,25 @@
 #!/bin/zsh
 
-workspace="Workspace/dotfiles"
+workspace="Workspace/Bash/dotfiles"
 absWorkspace="/home/jb/$workspace"
 configDir=".config"
 
 declare -a FUNCTION
-FUNCTION+=("confPrezto")
-FUNCTION+=("confSpaceship")
-FUNCTION+=("confOhMyZsh")
-FUNCTION+=("confFont")
-FUNCTION+=("confBashit")
-FUNCTION+=("confTmux")
-FUNCTION+=("confVim")
-FUNCTION+=("confNeovim")
-FUNCTION+=("confSpacemacs")
-FUNCTION+=("confGit")
-FUNCTION+=("confIdea")
-FUNCTION+=("confKeys")
-FUNCTION+=("confRedshift")
+FUNCTION=(
+  "confPrezto"
+  "confSpaceship"
+  "confOhMyZsh"
+  "confFont"
+  "confBashit"
+  "confTmux"
+  "confVim"
+  "confNeovim"
+  "confSpacemacs"
+  "confGit"
+  "confIdea"
+  "confKeys"
+  "confRedshift"
+)
 
 prefix="conf"
 
@@ -35,11 +37,15 @@ function confSpaceship {
         sudo rm spaceship.zsh
     fi
     sudo cp $absWorkspace/spaceship.zsh spaceship.zsh
-    cd sections
-    if [ -f java.zsh ]; then
-        sudo rm java.zsh
-    fi
-    sudo ln -s $absWorkspace/java.zsh java.zsh
+#    cd sections
+#    if [ -f java-prompt.zsh ]; then
+#        sudo rm java-prompt.zsh
+#    fi
+#    if [ -f scala-prompt.zsh ]; then
+#        sudo rm scala-prompt.zsh
+#    fi
+#    sudo ln -s $absWorkspace/java-prompt.zsh java-prompt.zsh
+#    sudo ln -s $absWorkspace/scala-prompt.zsh scala-prompt.zsh
     cd $themes
     if [ -f spaceship.zsh-theme ]; then
         sudo rm spaceship.zsh-theme
@@ -144,7 +150,7 @@ function confRedshift {
     cd
 }
 
-for ((i=0;i<${#FUNCTION[@]};i++))
+for ((i=1;i<=${#FUNCTION[@]};i++))
 do
     cd
     NAME=$(echo ${FUNCTION[$i]} | sed -e "s/^$prefix//" -e 's/\(.*\)/\L\1/')
@@ -158,13 +164,13 @@ do
         echo Install $NAME?
         read ins
     done
-    if [ $ins == 'y' ] || [ $ins == 'Y' ]
+    if [ $ins = 'y' ] || [ $ins = 'Y' ]
     then
         ${FUNCTION[$i]}
-    elif [ $ins == 'n' ]
+    elif [ $ins = 'n' ]
     then
         echo Skipping $NAME configuration.
-    elif [ $ins == 'q' ]
+    elif [ $ins = 'q' ]
     then
         echo Quitting configurer
         exit 1
