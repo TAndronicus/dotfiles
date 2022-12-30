@@ -37,15 +37,6 @@ function confSpaceship {
         sudo rm spaceship.zsh
     fi
     sudo cp $absWorkspace/spaceship.zsh spaceship.zsh
-#    cd sections
-#    if [ -f java-prompt.zsh ]; then
-#        sudo rm java-prompt.zsh
-#    fi
-#    if [ -f scala-prompt.zsh ]; then
-#        sudo rm scala-prompt.zsh
-#    fi
-#    sudo ln -s $absWorkspace/java-prompt.zsh java-prompt.zsh
-#    sudo ln -s $absWorkspace/scala-prompt.zsh scala-prompt.zsh
     cd $themes
     if [ -f spaceship.zsh-theme ]; then
         sudo rm spaceship.zsh-theme
